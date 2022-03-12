@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,64 @@
     <script src="script.js" defer></script>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <div class="panel-container">
+        <div class="left-panel">
+            <div class="logo-container">
+                <img src="./imgs//odin-lined.png" width="380" height="508">
+                <span class="logo-name">ODIN</span>
+                <!--Need to add links to artist page and Unsplash-->
+                <span class="footer">Photo by Halie West on Unsplash</span>
+            </div>
+        </div>
+        <div class="right-panel">
+            <p>
+                This is not a real online service! You know you need to do something
+                like this in your life to help you realize youre deepest dreams.
+                Sign up <em>now</em> to get started.
+            </p>
+            <p>
+                You <em>know</em> you want to.
+            </p>
+            <form action="#" method="post">
+                <fieldset class="main-form">
+                    <legend>Let's do this!</legend>
+                    <div class="form-container">
+                        <p>
+                            <label for="fname">FIRST NAME</label>
+                            <input type="text" id="fname" name="fname">
+                        </p>
+                        <p>
+                            <label for="lname">LAST NAME</label>
+                            <input type="text" id="lname" name="lname">
+                        </p>
+                        <p>
+                            <label for="email">EMAIL</label>
+                            <input type="email" id="email" name="email">
+                        </p>
+                        <p>
+                            <label for="telnum">PHONE NUMBER</label>
+                            <input type="tel" id="telnum" name="telnum">
+                        </p>
+                        <p>
+                            <label for="password">PASSWORD</label>
+                            <input type="password" id="password" name="password">
+                        </p>
+                        <p>
+                            <!--I don't know how to confirm that passwords are matching, will possibly change-->
+                            <label for="cpassword">CONFIRM PASSWORD</label>
+                            <input type="password" id="cpassword" name="cpassword">
+                        </p>
+                    </div>
+                </fieldset>
+                <button type="submit">Create Account</button>
+            </form>
+            <p class="login">
+                Already have an account? <a href="./login.html">Log in</a>
+            </p>
+        </div>
+    </div>
 </body>
+
 </html>
