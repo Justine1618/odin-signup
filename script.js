@@ -1,23 +1,50 @@
+
+const form = document.querySelector('form');
 const pass = document.querySelector('#password');
 const cpass = document.querySelector('#cpassword');
+const errorSpan = document.querySelector('.error');
 
-function validatePassword() {
-    const passValidity = pass.validity;
-    if (passValidity.patternMismatch) {
-        pass.setCustomValidity("Please include at least 6 uppercase letters, lowercase letters, and numbers");
+pass.addEventListener('input', (event) => {
+    if (pass.validity.valid) {
+        errorSpan.textContent = '';
+        errorSpan.clasName = 'error';
     }
     else {
-        pass.setCustomValidity('');
+        showError();
+    }
+});
+
+cpass.addEventListener('input', (event) => {
+    console.log('Checking pass match');
+    if(pass.value == cpass.value) {
+        errorSpan.textContent = '';
+        errorSpan.className = 'error';
+    }
+    else {
+        showError();
+    }
+})
+
+form.addEventListener('submit', (event) => {
+    if (!pass.validity.valid || !cpass.validity.valid) {
+        showError();
+        event.preventDefault();
     }
     if (pass.value != cpass.value) {
+        showError();
+        event.preventDefault();
+    }
+});
 
-        cpass.setCustomValidity("Passwords don't match");
+function showError() {
+    if (pass.value != cpass.value) {
+        errorSpan.textContent = '* Passwords must match'
     }
-    else {
-        cpass.setCustomValidity('');
+    if (pass.validity.patternMismatch) {
+        errorSpan.textContent = '* Password requires at least 6 uppercase letters, lowercase letters, or numbers';
     }
-    pass.reportValidity();
-    cpass.reportValidity();
+    if (pass.validity.valueMissing) {
+        errorSpan.textContent = '* Please enter a password';
+    }
+    errorSpan.className = 'error active';
 }
-
-console.log('starting');
