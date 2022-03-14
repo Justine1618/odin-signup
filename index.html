@@ -54,12 +54,12 @@
                         </p>
                         <p>
                             <label for="password">PASSWORD</label>
-                            <input type="password" id="password" name="password">
+                            <input type="password" id="password" name="password"
+                            required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" onchange="validatePassword()">
                         </p>
                         <p>
-                            <!--I don't know how to confirm that passwords are matching, will possibly change-->
                             <label for="cpassword">CONFIRM PASSWORD</label>
-                            <input type="password" id="cpassword" name="cpassword">
+                            <input type="password" id="cpassword" name="cpassword" required onkeyup="validatePassword()">
                         </p>
                     </div>
                 </fieldset>
